@@ -1,0 +1,67 @@
+conky.config = {
+	alignment = 'middle_right',
+	background = false,
+	cpu_avg_samples = 2,
+	default_color = '8D7C70', -- dark AFB8C6 light 5C616C
+	default_shade_color = '888888',
+	default_bar_height = 6,
+	default_bar_width = 204,
+	default_graph_height = 30,
+	default_graph_width = 162,
+	draw_borders = false,
+  draw_graph_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+	use_xft = true,
+	font = 'Roboto Condensed:Light:size=16',
+	gap_x = 29,
+	gap_y = 0,
+	minimum_height = 630 ,
+	minimum_width = 305,
+	maximum_width = 305,
+	double_buffer = true,
+	out_to_console = false,
+	out_to_stderr = false,
+	own_window = true,
+	own_window_transparent = true,
+	--own_window_colour = '434A59', -- dark 2F343F light F5F6F7
+	--own_window_argb_visual = true,
+	--own_window_argb_value = 0,
+	own_window_class = 'Conky',
+	own_window_type = 'desktop',
+	own_window_hints = 'undecorated,skip_taskbar,skip_pager,below',
+	update_interval = 1,
+
+  -- Uppercase test
+  --uppercase = true, --remove comment if you want all caps
+
+  -- Colors
+  color1 = 'F5F5F6',
+  color2 = 'F89D63',
+
+	-- Fonts
+  template1 = [[${font Roboto Condensed:Light:size=12}]],
+  template2 = [[${font Roboto Condensed::size=12}]],
+  template3 = [[${font Roboto Condensed::size=17}]],
+  template4 = [[${font Roboto Condensed:Light:size=25}]],
+  template5 = [[${font Roboto Condensed:Light:size=17}]],
+	}
+
+conky.text = [[
+${image .conky-project-orange-cat/backgroundb.png -p -1.5,0}
+${offset 86}${voffset 2}${cpugraph cpu0 30,162 F89D63 F89D63 0.5}
+${offset 77}${voffset -6}${template2}${freq}${template1} MHz${alignr 48}${voffset -1}${template3}${cpu}%
+${offset 44}${voffset 30}${color2}${membar}${color1}${offset -204}${execibar 3599 echo 0}${color}
+${voffset -6}${alignr 38}${template2}${mem} /${template1} ${memmax} ${voffset -1}${template3} ${memperc}%
+${offset 45}${voffset 43}${template4}${acpitemp}°C${alignr 58}${platform coretemp.0/hwmon/hwmon1 temp 2}°C
+${voffset 15}${if_existing /proc/net/route wlp2s0}${image .conky-project-orange-cat/connected.png -p 50,300}${alignr 56}${template2}downlink   ${template5}${voffset -6}${downspeed wlp2s0}/s${else}${image .conky-project-orange-cat/disconnected.png -p 50,297}${alignr 56}${template5}disconnected${endif}
+${voffset 46}${offset 37}${template2}${top_mem name 1}${voffset 4}${alignr 48}${top_mem mem_res 1}
+${voffset -2}${offset 37}${top_mem name 2}${voffset 3}${alignr 48}${top_mem mem_res 2}
+${voffset -2}${offset 37}${top_mem name 3}${voffset 3}${alignr 48}${top_mem mem_res 3}
+${voffset -2}${offset 37}${top_mem name 4}${voffset 3}${alignr 48}${top_mem mem_res 4}
+${voffset -2}${offset 37}${top_mem name 5}${voffset 3}${alignr 48}${top_mem mem_res 5}
+${voffset -2}${offset 37}${top_mem name 6}${voffset 3}${alignr 48}${top_mem mem_res 6}
+${voffset -2}${offset 37}${top_mem name 7}${voffset 3}${alignr 48}${top_mem mem_res 7}
+${voffset -2}${offset 37}${top_mem name 8}${voffset 3}${alignr 48}${top_mem mem_res 8}
+${voffset 17}${alignr 56}${uptime_short}
+]]
