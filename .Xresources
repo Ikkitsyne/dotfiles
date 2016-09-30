@@ -1,0 +1,90 @@
+! URXVT GENERAL CONFIG
+!------------------------------------------------
+URxvt*iconFile: /usr/share/icons/Faenza/apps/32/utilities-terminal.png
+IRC*iconFile: /usr/share/icons/Faenza/apps/32/xchat.png
+URxvt.geometry: 80x22
+! URXVT FONTS
+!------------------------------------------------
+URxvt.font:xft:Lemon:pixelsize=15
+URxvt.boldFont:xft:Lemon:bold:pixelsize=15
+URxvt.italicfont:xft:Lemon:italic:pixelsize=15
+URxvt.bolditalicFont:xft:Lemon:bold:italic:pixelsize=15
+URxvt*letterSpace: 1
+URxvt*allow_bold: true
+! URXVT FONT SETTINGS
+!------------------------------------------------
+Xft.autohint: true
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+! URXVT ENABLE LINK SUPPORT
+!------------------------------------------------
+URxvt.perl-ext-common: default,clipboard,url-select,keyboard-select
+URxvt.perl-ext: default
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.underline: true
+!disable the fucking bell
+URxvt.insecure: false
+! URXVT COPY PASTE SHORTCUTS
+!------------------------------------------------
+URxvt.iso14755: False
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+! URXVT SCROLLBAR AND CURSOR STYLE
+!------------------------------------------------
+URxvt*saveLines: 300000
+URxvt.scrollBar: false
+!URxvt*scrollstyle: plain
+URxvt*cursorBlink: true
+URxvt*cursorUnderline: true
+
+! URXVT TABS
+!------------------------------------------------
+URxvt.tabbedex.autohide: yes
+URxvt.tabbedex.tabbar-fg: 2
+URxvt.tabbedex.tabbar-bg: 0
+URxvt.tabbedex.tab-fg: 10
+URxvt.tabbedex.tab-bg: 0
+URxvt.tabbedex.title: yes
+URxvt.tabbedex.new-button: no
+! URXVT FULLSCREEN TOGGLE
+!------------------------------------------------
+URxvt.keysym.F11: perl:fullscreen:switch
+! URXVT COLORS
+!------------------------------------------------
+! vim: set filetype=xdefaults :
+
+! Colorscheme
+*foreground: #E5D2A5
+*background: #181512
+! Black Black !
+*color0: #252525
+*color8: #454545
+! Red Red !
+*color1: #CB4F29
+*color9: #CB4F29
+! Green Green !
+*color2: #A2B272
+*color10: #B9C88E
+! Yellow Yellow!
+*color3: #FFEB65
+*color11: #FFEB65
+! Blue Blue !
+*color4: #7A9388
+*color12: #94B1A3
+! Magenta Magenta
+*color5: #CB4F29
+*color13: #CB4F29
+!*color5: #F79F81 
+!*color13: #F79F81
+! Cyan Cyan !
+*color6: #767D75
+*color14: #9DA69E
+! White White !
+*color7: #F9F9F9
+*color15: #F9F9F9
