@@ -1,0 +1,37 @@
+background        no
+out_to_console 	  yes
+out_to_x	  no
+update_interval	  1
+total_run_times	  0
+short_units	  yes
+pad_percents	  3
+max_text_width 0
+if_up_strictness address
+override_utf8_locale no
+
+use_xft yes
+
+
+TEXT
+[
+  {"full_text": ${if_mpd_playing} " ","color":"\#839496"},
+  {"full_text": "[${mpd_status}] ${mpd_artist 20} - ${mpd_title 30} ","color":"\#a6a6a6"},
+  $else""},$endif
+  
+  {"full_text": "", "color" : "\#839496"},
+  ${if_up wlp2s0}{"full_text": "${wireless_essid wlp2s0} [${wireless_link_qual_perc wlp2s0}%] ","color":"\#a6a6a6"},
+  $else${if_up ppp0}{"full_text": "orange","color":"\#a6a6a6"},
+  $else${if_up enp4s0}{"full_text": "enp12s0","color":"\#a6a6a6"},
+  $else{"full_text": "no connection","color":"\#9C9C9C"},$endif$endif$endif
+  
+  {"full_text": "", "color" : "\#839496"},
+  { "full_text" : "${battery_percent BAT0}% " , "color" :
+  ${if_match ${battery_percent BAT0}<30}"\#B58900"${else}"\#799F26"${endif} } ,
+#  {"full_text": "[$battery_percent%] ","color":"\#a6a6a6"},
+  
+  {"full_text": "", "color" : "\#839496"},
+  {"full_text": "${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} ", "color":"\#a6a6a6"},
+
+  {"full_text": " ", "color" : "\#839496"},
+  {"full_text": "${time %H:%M}","color":"\#a6a6a6"}
+],
