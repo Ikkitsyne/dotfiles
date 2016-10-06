@@ -43,25 +43,15 @@ URxvt.scrollBar: false
 URxvt*cursorBlink: true
 URxvt*cursorUnderline: true
 
-! URXVT TABS
-!------------------------------------------------
-URxvt.tabbedex.autohide: yes
-URxvt.tabbedex.tabbar-fg: 2
-URxvt.tabbedex.tabbar-bg: 0
-URxvt.tabbedex.tab-fg: 10
-URxvt.tabbedex.tab-bg: 0
-URxvt.tabbedex.title: yes
-URxvt.tabbedex.new-button: no
-! URXVT FULLSCREEN TOGGLE
-!------------------------------------------------
-URxvt.keysym.F11: perl:fullscreen:switch
-! URXVT COLORS
-!------------------------------------------------
-! vim: set filetype=xdefaults :
-
 ! Colorscheme
+
+#define fg      #E5D2A5
+#define bg      #181512
+#define cc      #BE5E1E
+
 *foreground: #E5D2A5
 *background: #181512
+*cursorColor:	cc
 ! Black Black !
 *color0: #252525
 *color8: #454545
@@ -88,3 +78,16 @@ URxvt.keysym.F11: perl:fullscreen:switch
 ! White White !
 *color7: #F9F9F9
 *color15: #F9F9F9
+
+! ROFI
+!------------------------------------------------
+rofi.color-enabled : true
+! State:           'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
+rofi.color-normal: bg,        cc,        bg,       bg,       #ab9c71
+rofi.color-urgent: bg,        bg,        bg,       bg,       bg
+rofi.color-active: bg,        bg,        bg,       bg,       bg
+
+!                 'bg',          'border'
+rofi.color-window: bg,             bg
+!-----------------------------------------------
+
